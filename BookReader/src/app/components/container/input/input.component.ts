@@ -9,8 +9,8 @@ import { InputViewComponent } from '../../presentatoinal/input-view/input-view.c
   standalone:true
 })
 export class InputComponent {
-  @Input() inputType! : string;
-  @Input() erorrMessage!: string;
-  @Input() isMandatoryField!:boolean;
+  // @Input() inputType! : string;
+  // @Input() erorrMessage!: string;
+  // @Input() isMandatoryField!:boolean;
 
 }

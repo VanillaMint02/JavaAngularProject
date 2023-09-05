@@ -1,2 +1,13 @@
-
-<p>Input View Works</p>
+<form class="inputFormWrapper">
+    <mat-form-field class="inputWrapper">
+        <mat-label *ngIf="isMandatoryField===true; else nonMandatoryField">
+            <span>{{inputType}}<strong>*</strong></span>
+        </mat-label>
+        <ng-template #nonMandatoryField>
+            <mat-label>
+                {{inputType}}
+            </mat-label>
+        </ng-template>
+        <input matInput value={{value}}>
+    </mat-form-field>
+  </form>
