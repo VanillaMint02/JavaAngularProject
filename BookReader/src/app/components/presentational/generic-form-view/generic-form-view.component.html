@@ -1,0 +1,11 @@
+<form class="formStyle">
+  <h1>{{ formTitle }}</h1>
+  <app-input
+    *ngFor="let input of givenInputs"
+    [inputType]="input.inputType"
+    [errorMessage]="input.errorMessage"
+    [isMandatoryField]="input.isMandatoryField"
+    [value]="input.value"
+  >
+  </app-input>
+</form>

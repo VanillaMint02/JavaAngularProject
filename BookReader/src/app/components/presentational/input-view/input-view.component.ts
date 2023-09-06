@@ -12,14 +12,11 @@ import { CommonModule } from '@angular/common';
   standalone:true
 })
 export class InputViewComponent {
+
    @Input() inputType! : string;
-   @Input() erorrMessage?: string;
+   @Input() errorMessage?: string;
    @Input() isMandatoryField!:boolean;
    @Input() value?:string;
    constructor(){
-    this.isMandatoryField=false;
-    this.inputType="Dark Clouds In The sky";
-    this.erorrMessage="NalalaLon";
-    this.value="I like Turtles";
    }
 }
