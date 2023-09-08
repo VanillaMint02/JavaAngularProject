@@ -1,0 +1,29 @@
+.inputFormWrapper {
+  min-width: 9.5rem;
+  max-width: 31rem;
+  width: 100%;
+  color: #fff5e1 !important;
+  .inputWrapper {
+    width: 100%;
+    height: 5rem;
+    span {
+      strong {
+        color: #756046fd;
+      }
+      color: #d0b490fd;
+    }
+    ::ng-deep .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+      background-color: #fff5e1 !important;
+    }
+    
+    ::ng-deep .mdc-text-field--filled:not(.mdc-text-field--enabled) {
+      background-color: #fff5e1 !important;
+      input {
+        color: #756046fd;
+        --mdc-filled-text-field-caret-color: black !important;
+      }
+    }
+  }
+}
+
+
