@@ -10,7 +10,7 @@ import { FormControl } from '@angular/forms';
 })
 export class InputComponent {
   @Input() inputType!: string;
-  @Input() errorMessage!: string;
+  @Input() errorMessages!: string[];
   @Input() isMandatoryField!: boolean;
   @Input() value!: FormControl;
 
