@@ -3,9 +3,11 @@
   <app-input
     *ngFor="let input of givenInputs"
     [inputType]="input.inputType"
-    [errorMessage]="input.errorMessage"
+    [errorMessages]="input.errorMessages"
     [isMandatoryField]="input.isMandatoryField"
     [value]="input.value"
   >
   </app-input>
+  <confirmation-button [buttonName]="confirmationButtonName"></confirmation-button>
+  <generic-button [buttonName]="'Home'" [iconName]="'home'"></generic-button>
 </form>

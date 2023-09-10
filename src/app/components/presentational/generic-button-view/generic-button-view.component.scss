@@ -1,0 +1,12 @@
+@import '../../../../color-variables.scss';
+.imageTextButton{
+
+    button {
+        background-color: $backGroundColor;
+        box-shadow:inset 0 0 1rem 0.02rem $boxShadowColor;
+
+        h4 {
+            color: $textFieldColor;
+        }
+    }
+}

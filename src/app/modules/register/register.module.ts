@@ -7,12 +7,13 @@ import { LoginPageComponent } from 'src/app/pages/login-page/login-page.componen
 
 
 @NgModule({
-  declarations: [LoginPageComponent],
+  declarations: [],
   imports: [
     CommonModule,
     AppRoutingModule,
     GenericFormComponent,
+    LoginPageComponent,
   ],
-  exports:[LoginPageComponent],
+  exports:[],
 })
 export class RegisterModule { }

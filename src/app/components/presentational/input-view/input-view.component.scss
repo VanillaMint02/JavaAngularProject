@@ -1,29 +1,33 @@
+@import '../../../../color-variables.scss';
 .inputFormWrapper {
   min-width: 9.5rem;
   max-width: 31rem;
   width: 100%;
-  color: #fff5e1 !important;
+
   .inputWrapper {
     width: 100%;
     height: 5rem;
-    span {
-      strong {
-        color: #756046fd;
-      }
-      color: #d0b490fd;
+
+
+    .mdc-text-field--filled:not(.mdc-text-field--disabled) .mdc-floating-label {
+      color: $textFieldColor
     }
-    ::ng-deep .mdc-text-field--filled:not(.mdc-text-field--disabled) {
-      background-color: #fff5e1 !important;
+
+    --mdc-filled-text-field-focus-active-indicator-color: #b88d59fd !important;
+
+    .mdc-text-field--filled.mdc-text-field--invalid:not(.mdc-text-field--disabled) .mdc-floating-label,
+    .mdc-text-field--filled.mdc-text-field--invalid:not(.mdc-text-field--disabled) .mdc-floating-label--float-above {
+      color: var(--mdc-filled-text-field-error-label-text-color);
+
+
     }
-    
-    ::ng-deep .mdc-text-field--filled:not(.mdc-text-field--enabled) {
-      background-color: #fff5e1 !important;
+
+    .mdc-text-field--filled:not(.mdc-text-field--enabled) {
+      background-color: $backGroundColor !important;
+
       input {
-        color: #756046fd;
-        --mdc-filled-text-field-caret-color: black !important;
+        color: $textFieldColor;
       }
     }
   }
 }
-
-

@@ -6,22 +6,19 @@ import { InputComponent } from './components/container/input/input.component';
 import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { InputViewComponent } from '../app/components/presentational/input-view/input-view.component';
 import { RegisterModule } from './modules/register/register.module';
 import { GenericFormViewComponent } from './components/presentational/generic-form-view/generic-form-view.component';
 import { GenericFormComponent } from './components/container/generic-form/generic-form.component';
-import { FormConfirmButtonComponentComponent } from './components/container/form-confirm-button-component/form-confirm-button-component.component';
 import { Variables } from './variables/variables';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FormConfirmButtonComponentComponent,
   ],
   imports: [
-    
     CommonModule,
     MatInputModule,
     MatFormFieldModule,

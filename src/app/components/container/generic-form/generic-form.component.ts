@@ -5,11 +5,17 @@ import { GenericFormViewComponent } from '../../presentational/generic-form-view
 @Component({
   imports:[GenericFormViewComponent],
   selector: 'generic-form',
-  templateUrl: './generic-form.component.html',
+  template:`<generic-form-view
+  [givenInputs]="givenInputs"
+  [formTitle]="formTitle"
+  [confirmationButtonName]="confirmationButtonName"
+  ></generic-form-view>
+  `,
   standalone:true
 })
 export class GenericFormComponent {
 
 @Input() givenInputs!:InputComponent[];
 @Input() formTitle!:string; 
+@Input() confirmationButtonName!:string;
 }
