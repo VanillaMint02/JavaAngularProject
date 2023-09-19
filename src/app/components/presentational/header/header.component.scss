@@ -1,0 +1,18 @@
+@import '../../../../color-variables.scss';
+
+.mat-mdc-tab-group, .mat-mdc-tab-nav-bar{
+    --mdc-tab-indicator-active-indicator-color: #756046 !important;
+    --mat-tab-header-active-label-text-color: #756046;
+    --mat-tab-header-active-ripple-color: #756046;
+    --mat-tab-header-inactive-ripple-color: #756046;
+    --mat-tab-header-active-focus-label-text-color: #756046;
+    --mat-tab-header-active-hover-label-text-color: #756046;
+    --mat-tab-header-active-focus-indicator-color: #756046;
+    --mat-tab-header-active-hover-indicator-color: #756046;
+    
+    }
+    .mat-mdc-tab-group {
+        max-width: 60% !important;
+        
+        justify-content: flex-end;
+    }

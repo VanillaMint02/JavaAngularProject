@@ -18,6 +18,8 @@ export class InputViewComponent {
    @Input() errorMessages!: string[] | '';
    @Input() isMandatoryField!:boolean;
    @Input() value!:FormControl;
+   @Input() hint?:string;
+   @Input() formControlName!:string;
    
   getErrorMessage() { 
     if (this.value.hasError('required')) {

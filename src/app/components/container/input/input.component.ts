@@ -18,4 +18,6 @@ export class InputComponent {
   @Input() errorMessages!: string[];
   @Input() isMandatoryField!: boolean;
   @Input() value!: FormControl;
+  @Input() hint?:string;
+  @Input() formControlName!:string;
 }

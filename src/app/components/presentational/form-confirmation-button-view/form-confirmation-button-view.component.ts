@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MatButton,MatButtonModule } from '@angular/material/button';
 
 @Component({
@@ -11,5 +11,5 @@ import { MatButton,MatButtonModule } from '@angular/material/button';
 })
 export class FormConfirmationButtonViewComponent {
 @Input() buttonName!:string;
- 
+@Output() buttonEvent=new EventEmitter<void>;
 }

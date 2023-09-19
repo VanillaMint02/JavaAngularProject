@@ -9,14 +9,17 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { InputViewComponent } from '../app/components/presentational/input-view/input-view.component';
-import { RegisterModule } from './modules/register/register.module';
+import { AuthModule } from './modules/register/Auth.module';
 import { GenericFormViewComponent } from './components/presentational/generic-form-view/generic-form-view.component';
 import { GenericFormComponent } from './components/container/generic-form/generic-form.component';
 import { Variables } from './variables/variables';
+import { LibraryPageComponent } from './pages/library-page.component';
+import { GenericTableComponent } from './components/presentational/generic-table/generic-table.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+   
   ],
   imports: [
     CommonModule,
@@ -29,12 +32,15 @@ import { Variables } from './variables/variables';
     InputComponent,
     MatInputModule,
     InputViewComponent,
-    RegisterModule,
+    AuthModule,
     GenericFormComponent,
     GenericFormViewComponent,
+    GenericTableComponent,
+    LibraryPageComponent,
   ],
-  providers: [RegisterModule,Variables],
+  providers: [Variables],
   bootstrap: [AppComponent]
+
 })
 export class AppModule { 
 }

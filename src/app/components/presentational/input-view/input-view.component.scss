@@ -23,10 +23,10 @@
     }
 
     .mdc-text-field--filled:not(.mdc-text-field--enabled) {
-      background-color: $backGroundColor !important;
+      background-color: #FFF5E1 !important;
 
       input {
-        color: $textFieldColor;
+        color: #756046;
       }
     }
   }

@@ -1,10 +1,11 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, Input,} from '@angular/core';
 import {MatButtonModule} from '@angular/material/button'
 import { MatIconModule} from '@angular/material/icon';
 
 @Component({
   standalone:true,
-  imports:[MatButtonModule,MatIconModule,],
+  imports:[MatButtonModule,MatIconModule,CommonModule],
   selector: 'generic-button',
   templateUrl: './generic-button-view.component.html',
   styleUrls: ['./generic-button-view.component.scss']
