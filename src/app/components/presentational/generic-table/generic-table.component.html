@@ -1,10 +1,14 @@
-<table mat-table [dataSource]="tableDataSource">
-  <div *ngFor="let header of tableHeader">
-    <ng-container matColumnDef="{{header}}">
-      <th mat-header-cell *matHeaderCellDef>{{header}}</th>
-      <td mat-cell *matCellDef="let rowData" >{{ rowData[header] }}</td>
+<table mat-table [dataSource]="tableDataSource" class="genericTable">
+  <div *ngFor="let header of headerKeys">
+    <ng-container matColumnDef="{{ header }}">
+      <th mat-header-cell *matHeaderCellDef>{{ findHeaderName(header) }}</th>
+      <td mat-cell *matCellDef="let rowData">{{ rowData[header] }}</td>
     </ng-container>
   </div>
-  <tr mat-header-row *matHeaderRowDef="tableHeader"></tr>
-  <tr mat-row *matRowDef="let row; columns: tableHeader"></tr>
+  <tr mat-header-row *matHeaderRowDef="headerKeys"></tr>
+  <tr
+    mat-row
+    *matRowDef="let row; columns: headerKeys"
+    (click)="onRowClick.emit()"
+  ></tr>
 </table>

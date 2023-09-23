@@ -7,11 +7,6 @@ export interface BooksTable{
     bookFinished?:string;
     genres?:string[]
 }
-export const booksTableHeader:BooksTable={
-    title:'Title',
-    authors:['Authors'],
-    pagesNumber:'Page Number',
-    currentPage:'Current Page',
-    bookFinished:'Finished?',
-    genres:["genres"]
-}
+
+export const booksTableHeader:[string,string][]=[["title",'Title'],["authors","Authors"],
+["pagesNumber","Page Number"],["currentPage","Current Page"],["bookFinished","Finished?"],["genres","Genres"]];

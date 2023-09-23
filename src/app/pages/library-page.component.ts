@@ -12,19 +12,23 @@ import { BookService } from '../services/books-service';
   providers:[BookService],
   template: `<generic-table
   [tableHeader]="tableHeader"
-  [tableDataSource]="booksTable">
+  [tableDataSource]="booksTable"
+  >
+  
   </generic-table>`,
 })
 export class LibraryPageComponent implements OnInit {
 
   bookList: Book[]=mockBook;
   booksTable: BooksTable[]=[];
-  tableHeader=Object.keys(booksTableHeader);
+  tableHeader!:[string,string][];
+  tableHeaderNames!:Object;
   constructor(private bookService:BookService){
 
   }
   ngOnInit(): void {
-    this.tableHeader=Object.keys(booksTableHeader);
+    
+    this.tableHeader=booksTableHeader;
     this.bookList.forEach((book) => {
       this.booksTable.push(
         ({
@@ -34,10 +38,9 @@ export class LibraryPageComponent implements OnInit {
           pagesNumber: book.pageNumber?.toString(),
           currentPage: book.currentPage!.pageNumber!.toString(),
           bookFinished: book.bookFinished!.toString(),
+          genres:book.genres,
         })
       );
-    });
-
-    console.log(this.booksTable);
+    });    
   }
 }

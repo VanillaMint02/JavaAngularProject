@@ -5,8 +5,8 @@ import { AppComponent } from './app.component';
 import { InputComponent } from './components/container/input/input.component';
 import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { InputViewComponent } from '../app/components/presentational/input-view/input-view.component';
 import { AuthModule } from './modules/register/Auth.module';
@@ -15,13 +15,12 @@ import { GenericFormComponent } from './components/container/generic-form/generi
 import { Variables } from './variables/variables';
 import { LibraryPageComponent } from './pages/library-page.component';
 import { GenericTableComponent } from './components/presentational/generic-table/generic-table.component';
+import { GenericDrawerComponent } from './components/presentational/generic-drawer/generic-drawer.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-   
-  ],
+  declarations: [AppComponent],
   imports: [
+    GenericDrawerComponent,
     CommonModule,
     MatInputModule,
     MatFormFieldModule,
@@ -39,8 +38,6 @@ import { GenericTableComponent } from './components/presentational/generic-table
     LibraryPageComponent,
   ],
   providers: [Variables],
-  bootstrap: [AppComponent]
-
+  bootstrap: [AppComponent],
 })
-export class AppModule { 
-}
+export class AppModule {}

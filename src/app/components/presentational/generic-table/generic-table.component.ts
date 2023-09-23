@@ -1,8 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, OnInit } from '@angular/core';
-import { MatTableDataSource, MatTableModule } from '@angular/material/table';
-import { Book } from 'src/app/modules/types/books';
-import { BooksTable } from 'src/app/modules/types/interface-types/books-table';
+import { Component, EventEmitter, Input, OnInit, Output, } from '@angular/core';
+import { MatTableModule } from '@angular/material/table';
 
 @Component({
   standalone: true,
@@ -12,11 +10,24 @@ import { BooksTable } from 'src/app/modules/types/interface-types/books-table';
   styleUrls: ['./generic-table.component.scss'],
 })
 export class GenericTableComponent implements OnInit {
+ 
+  @Input() tableHeader!: [string,string][];
+  @Input() tableDataSource!: Object[];
+  @Output() onRowClick!:EventEmitter<void> 
+  headerKeys!:string[];
+  headerNames!:string;
+
   ngOnInit(): void {
+    this.headerKeys=[];
+    this.tableHeader.forEach(key=>{this.headerKeys.push(key[0])});
     console.log(this.tableDataSource);
   }
-  @Input() tableHeader!: string[];
-  @Input() tableDataSource!: BooksTable[];
-
+  findHeaderName( headerKey:string):string{
+    const keyIndex=this.headerKeys.indexOf(headerKey)
+    return this.tableHeader[keyIndex][1];
+  }
   
+  
+
+ 
 }
