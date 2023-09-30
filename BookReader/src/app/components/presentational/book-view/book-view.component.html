@@ -1,0 +1,7 @@
+<div class="bookContainer">
+  <h1>{{ book.currentPage?.pageTitle }}</h1>
+  <p>{{ book.currentPage?.pageContent }}</p>
+  <p>{{ book.currentPage?.pageNumber }}</p>
+  <button (click)="prevPage.emit(book.currentPage!.pageNumber!)"></button>"
+  <button (click)="nextPage.emit(book.currentPage!.pageNumber!)"></button>"
+</div>

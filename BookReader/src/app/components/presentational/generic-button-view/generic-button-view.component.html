@@ -1,0 +1,13 @@
+<div class="imageTextButton">
+  <div *ngIf="buttonName != undefined; else onlyIconButton">
+    <button mat-button>
+      <mat-icon *ngIf="iconName != undefined">{{ iconName }}</mat-icon>
+      <h4>{{ buttonName }}</h4>
+    </button>
+  </div>
+  <ng-template #onlyIconButton>
+    <button mat-mini-fab>
+      <mat-icon *ngIf="iconName != undefined">{{ iconName }}</mat-icon>
+    </button>
+  </ng-template>
+</div>

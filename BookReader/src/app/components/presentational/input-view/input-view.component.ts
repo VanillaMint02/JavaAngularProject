@@ -1,22 +1,33 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, ViewEncapsulation } from '@angular/core';
 import { MatInputModule } from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import {FormsModule} from '@angular/forms';
+import {FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-input-view',
   templateUrl: './input-view.component.html',
   styleUrls: ['./input-view.component.scss'],
-  imports: [MatInputModule,MatFormFieldModule,FormsModule,CommonModule,],
-  standalone:true
+  imports: [MatInputModule,MatFormFieldModule,FormsModule,CommonModule,FormsModule,ReactiveFormsModule],
+  standalone:true,
+  encapsulation:ViewEncapsulation.None
 })
 export class InputViewComponent {
 
    @Input() inputType! : string;
-   @Input() errorMessage?: string;
+   @Input() errorMessages!: string[] | '';
    @Input() isMandatoryField!:boolean;
-   @Input() value?:string;
-   constructor(){
-   }
+   @Input() value!:FormControl;
+   @Input() hint?:string;
+   @Input() formControlName!:string;
+   
+  getErrorMessage() { 
+    if (this.value.hasError('required')) {
+      return this.errorMessages[0];
+    }
+    if (this.value.hasError('email')) {
+      return this.errorMessages[1];
+    }
+    return "";
+  }
 }

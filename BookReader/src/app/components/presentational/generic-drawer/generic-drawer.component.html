@@ -1,0 +1,24 @@
+<mat-drawer-container class="drawerContainer">
+  <mat-drawer
+    #drawer
+    class="drawer"
+    mode="over"
+    position="end"
+    [(opened)]="opened"
+  >
+    <h1>{{ drawerTitle }}</h1>
+    <generic-form
+      *ngFor="let formGroup of formGroupArray"
+      [givenInputs]="formGroup.givenInputs"
+      [formTitle]="formGroup.formTitle"
+      [formGroup]="formGroup.formGroup"
+    >
+    </generic-form>
+    <ng-container *ngIf="confirmationButtonName != undefined" class="confirmationButton">
+      <confirmation-button
+        [buttonName]="confirmationButtonName"
+        (buttonEvent)="buttonEvent.emit()"
+      ></confirmation-button>
+    </ng-container>
+  </mat-drawer>
+</mat-drawer-container>
